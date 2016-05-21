@@ -1,0 +1,13 @@
+{% capture site.root %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head.html %}
+<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} class="no-sidebar">
+  <nav role="navigation">{% include navigation.html %}</nav>
+  <div class="container" role="main">
+    <div class="row">
+      {{ content | expand_urls: site.root }}
+    </div>
+  </div>
+  {% include footer.html %}
+  {% include google_analytics.html %}
+</body>
+</html>

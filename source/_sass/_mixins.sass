@@ -1,0 +1,68 @@
+$handheldPortraitWidth: 480px
+$handheldLandscapeWidth: 768px
+$tabletPortraitWidth: $handheldLandscapeWidth
+$tabletLandscapeWidth: 980px
+$smallDesktopWidth: 1200px
+$largeDesktopWidth: 1600px
+
+=respond-to($media)
+  @if $media == handheld-portrait
+    @media only screen and (max-width: $handheldPortraitWidth)
+      @content
+  @else if $media == handheld-landscape
+    @media only screen and (min-width: $handheldPortraitWidth + 1) and (max-width: $handheldLandscapeWidth)
+      @content
+  @else if $media == handheld
+    @media only screen and (max-width: $handheldLandscapeWidth)
+      @content
+  @else if $media == tablet-portrait
+    @media only screen and (min-width: $tabletPortraitWidth) and (max-width: $tabletLandscapeWidth - 1)
+      @content
+  @else if $media == tablet-landscape
+    @media only screen and (min-width: $tabletLandscapeWidth) and (max-width: $smallDesktopWidth - 1)
+      @content
+  @else if $media == tablet
+    @media only screen and (min-width: $tabletPortraitWidth) and (max-width: $smallDesktopWidth - 1)
+      @content
+  @else if $media == small-desktop
+    @media only screen and (min-width: $smallDesktopWidth) and (max-width: $largeDesktopWidth - 1)
+      @content
+  @else if $media == large-desktop
+    @media only screen and (min-width: $largeDesktopWidth)
+      @content
+  @else if $media == desktop
+    @media only screen and (min-width: $smallDesktopWidth)
+      @content
+  @else if $media == retina
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+      @content
+
+.visible-phone
+  display: none !important
+.visible-tablet
+  display: none !important
+//.visible-desktop display: inherit
+//.hidden-phone display: inherit
+//.hidden-tablet display: inherit
+.hidden-desktop
+  display: none !important
+
++respond-to(handheld)
+  .visible-phone
+    display: inherit !important // Use inherit to restore previous behavior
+  .hidden-phone
+    display: none !important
+  .hidden-desktop
+    display: inherit !important
+  .visible-desktop
+    display: none !important
+
++respond-to(tablet-portrait)
+  .visible-tablet
+    display: inherit !important
+  .hidden-tablet
+    display: none !important
+  .hidden-desktop
+    display: inherit !important
+  .visible-desktop
+    display: none !important

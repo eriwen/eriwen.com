@@ -1,0 +1,242 @@
+@import colors
+$handheldPortraitWidth: 480px
+$handheldLandscapeWidth: 768px
+$tabletPortraitWidth: $handheldLandscapeWidth
+$tabletLandscapeWidth: 980px
+$smallDesktopWidth: 1200px
+$largeDesktopWidth: 1600px
+
+html
+  font-size: 100%
+  @media only screen and (min-width: $tabletPortraitWidth) and (max-width: $smallDesktopWidth - 1)
+    font-size: 100%
+  @media only screen and (min-width: $smallDesktopWidth)
+    font-size: 110%
+
+body
+  padding-top: 45px
+  @media only screen and (max-width: $tabletLandscapeWidth - 1)
+    padding-top: 0
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 400
+  line-height: 1.3em
+
+h1
+  font-size: 2.074rem
+h2
+  font-size: 1.728rem
+h3
+  font-size: 1.44rem
+h4
+  font-size: 1.2rem
+  font-weight: 600
+
+ul
+  list-style: circle
+
+.home .hero-unit
+  background: $white
+  padding: 60px
+  @media only screen and (max-width: $handheldPortraitWidth)
+    padding: 10px
+  @media only screen and (min-width: $handheldPortraitWidth + 1) and (max-width: $handheldLandscapeWidth)
+    background: $white url(/images/eric-profile.jpg) no-repeat bottom right
+    background-size: 112.5px 144px
+    padding: 10px
+  @media only screen and (min-width: $tabletPortraitWidth) and (max-width: $smallDesktopWidth - 1)
+    background: $white url(/images/eric-profile.jpg) no-repeat bottom right
+    background-size: 150px 192px
+  @media only screen and (min-width: $smallDesktopWidth)
+    background: $white url(/images/eric-profile.jpg) no-repeat bottom right
+    margin-top: 10px
+
+.hero-unit h1
+  @media only screen and (max-width: $handheldPortraitWidth)
+    display: none
+  font-family: Lobster, "Helvetica Neue", Helvetica, sans-serif
+  font-size: 5rem
+
+// Make title fit on one line
+.navbar .brand
+  padding: 8px 20px 10px
+  @media only screen and (max-width: $handheldPortraitWidth)
+    font-size: 1.125rem
+
+// bug fix for bootstrap fixed header
+@media only screen and (min-width: $tabletLandscapeWidth) and (max-width: $smallDesktopWidth - 1)
+  html .navbar-fixed-top .container
+    width: 940px
+
+.navbar .nav-social
+  @media only screen and (max-width: $handheldPortraitWidth)
+    display: none
+  list-style-type: none
+  position: relative
+  display: block
+  margin: 7px 0 0 0
+  > li
+    display: block
+    float: left
+    > a
+      line-height: 1em
+      padding: 6px
+
+.nav-social svg path
+  fill: #eee
+  stroke: none
+  &:hover
+    fill: #fff
+
+.label
+  padding: 0 4px 1px
+
+.page-header
+  border-bottom: 0 none
+  font-family: "Lobster", "Quicksand", "Helvetica Neue", Helvetica, sans-serif
+  font-weight: 400
+  padding: 0
+  margin: 1rem 0
+
+.about
+  font-size: 1.1em
+  list-style-type: none
+  padding-right: 80px
+  @media only screen and (max-width: $handheldPortraitWidth)
+    margin: 0 0 0 5px
+    padding-right: 0
+  @media only screen and (min-width: $tabletPortraitWidth) and (max-width: $tabletLandscapeWidth - 1)
+    margin: 0
+
+.header-aside
+  float: right
+  font-weight: normal
+  font-size: 0.9em
+
+.section
+  margin: 20px 0
+
+.hentry
+  h2, h3
+    margin: 0.5rem 0
+  p
+    font-size: 1rem
+    line-height: 1.4em
+    margin: 0 0 1.5rem
+    &:first-child
+      font-size: 1.2rem
+  em
+    background-color: #fffff0
+  .sharing
+    margin-bottom: 2rem
+
+.promolist
+  color: #999
+  list-style-type: none
+  margin: 0
+  li
+    @media only screen and (min-width: $smallDesktopWidth)
+      padding: 3px 0
+    border-bottom: 1px dotted #666
+    padding: 6px 0
+  time, .project-description, .watch
+    @media only screen and (max-width: $handheldLandscapeWidth)
+      display: none
+  time
+    color: #999
+    float: right
+  .project
+    white-space: nowrap
+    text-overflow: ellipsis
+    max-width: 85%
+    overflow: hidden
+    display: inline-block
+  .project-description
+    color: #999
+    padding-left: 10px
+    font-size: 0.9em
+  .watch
+    float: right
+
+figure.highlight
+  border: 0 none
+  padding: 0
+  margin: 0 0 1.5em 0
+
+p code, li code
+  border-radius: 3px
+  white-space: pre
+
+.meta
+  font-size: 0.9rem
+
+.img-center, .center
+  display: block
+  margin: 0 auto
+
+.img-left
+  display: block
+  float: left
+  padding: 0 8px 4px 0
+
+.img-right
+  display: block
+  float: right
+  padding: 0 0 4px 8px
+
+.no-pad
+  padding: 0
+
+.cheqlist-screenshots
+  margin: 0 auto
+  list-style-type: none
+  li
+    display: inline-block
+    margin-bottom: 5px
+
+.page-footer
+  background: $white
+  p
+    font-size: 0.8em
+  .credit
+    float: right
+
+.footer-wrapper
+  background: transparent url(/images/eric-profile.jpg) no-repeat bottom right
+  background-size: 100px 128px
+  @media only screen and (max-width: $handheldLandscapeWidth)
+    background: transparent
+
+.related-posts
+  margin-left: 0
+
+.related-posts ul
+  list-style-type: none
+  margin-left: 15px
+
+.about-eric-footer
+  margin-left: 0
+  p
+    padding-right: 60px
+
+.screen-reader-text
+  position: absolute
+  top: -9999px
+  left: -9999px
+
+// Allow use of full width for portrait mode tablets
+@media only screen and (min-width: $tabletPortraitWidth) and (max-width: $tabletLandscapeWidth - 1)
+  .container
+    width: auto
+    margin: 0 50px
+  [class*="span"], .row-fluid [class*="span"]
+    float: none
+    display: block
+    width: auto
+    margin-left: 0
+
+// For specific blog posts
+#adjacent h4 + p,
+#indirect-adjacent h4 ~ p
+  font-weight: bold
+  color: #F00

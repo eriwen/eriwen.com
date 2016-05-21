@@ -1,0 +1,9 @@
+---
+layout: {{ layout }}
+title: "{{ title }}"
+comments: true
+slug:
+status: draft
+date: {{ date }}
+category:
+---

@@ -1,0 +1,20 @@
+<div class="container hidden-phone">
+  <div class="row">
+    <div class="offset2 span8 footer-wrapper">
+      <div class="span5 related-posts">
+        <h3>Related Posts</h3>
+        <ul class="related-posts" role="navigation">
+          {% for post in site.related_posts limit:5 %}
+          <li>&rsaquo; <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="span3 about-eric-footer">
+        <h3>About the author</h3>
+        <p>Eric Wendelin is a software engineer at <a href="https://gradle.org">Gradle</a>. He is an <a
+            href="{{ site.subscribe_github }}">open-source fanatic</a> and <a href="http://slideshare.net/emwendelin">speaker</a>.</p>
+        <p><a href="{{ site.subscribe_twitter }}" class="twitter-follow-button" data-show-count="false">Follow @eriwen</a></p>
+      </div>
+    </div>
+  </div>
+</div>

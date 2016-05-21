@@ -1,0 +1,46 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+url: https://www.eriwen.com
+title: Test early; Refactor often; Make things
+subtitle:
+author: Eric Wendelin
+simple_search:
+description: Eric Wendelin's Blog
+
+date_format: "ordinal"
+
+# RSS / Email (optional) subscription links (change if using something like Feedburner)
+subscribe_github: https://github.com/eriwen
+subscribe_twitter: https://twitter.com/eriwen
+subscribe_rss: http://feeds.feedburner.com/EricWendelin
+subscribe_email:
+# RSS feeds can list your email address if you like
+email: me@eriwen.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+root: /
+permalink: /:categories/:title/
+pagination_dir: /
+source: source
+destination: public
+titlecase: false
+default_asides: []
+
+gems:
+  - jekyll-sitemap
+
+# Disqus Comments
+disqus_short_name: testearlyrefactoroften
+disqus_show_comment_count: false
+
+# Google Analytics
+google_analytics_tracking_id: UA-721302-4
