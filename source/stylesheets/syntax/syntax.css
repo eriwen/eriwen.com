@@ -60,7 +60,7 @@ html .gist .gist-file .gist-meta {
   border: 1px solid #f3f3f3 !important;
   color: #999999;
   font-size: .7em !important;
-  background: #eeeeee url('/source/images/noise.png?1458143528') top left;
+  background: #eeeeee;
   border: 1px solid #e1e1e1 !important;
   border-top: 1px solid white !important;
   font-family: "Source Code Pro", Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
@@ -71,7 +71,7 @@ html .gist .gist-file .gist-meta a {
   color: #1863a1 !important;
   text-decoration: none;
 }
-/* line 4, ../../../../../../../../opt/twitter/rvm/gems/ruby-2.2.1/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+/* line 4, ../../../../../../.rvm/gems/ruby-2.2.2/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
 html .gist .gist-file .gist-meta a:hover {
   text-decoration: underline;
 }
@@ -85,7 +85,7 @@ html .gist .gist-file .gist-meta a[href*='#file'] {
   position: absolute;
   top: 0;
   left: 0;
-  right: -10px;
+  right: 0;
   color: #999999 !important;
 }
 /* line 77, ../../_sass/syntax/_highlight.scss */
@@ -100,7 +100,7 @@ html .gist .gist-file .gist-meta a[href*=raw] {
 
 /* line 102, ../../_sass/syntax/_highlight.scss */
 pre {
-  background: white url('/source/images/noise.png?1458143528') top left;
+  background: white;
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
   -ms-border-radius: 0.4em;
@@ -536,7 +536,7 @@ figure.highlight figcaption {
   color: #777 !important;
   text-shadow: none;
 }
-/* line 4, ../../../../../../../../opt/twitter/rvm/gems/ruby-2.2.1/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+/* line 4, ../../../../../../.rvm/gems/ruby-2.2.2/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
 .download-source:hover, html .gist .gist-file .gist-meta a[href*=raw]:hover, figure.highlight figcaption a:hover {
   text-decoration: underline;
 }
