@@ -99,7 +99,7 @@ task :minify_js do
   output = "#{source_dir}/javascripts/all.#{asset_version}.js"
   source_map_option = "--source-map #{source_dir}/javascripts/all.#{asset_version}.js.map"
   source_map_root_option = "--source-map-root https://www.eriwen.com"
-  system "uglifyjs2 #{input} -o #{output} #{source_map_option} #{source_map_root_option} -p 2 -m -c warnings=false"
+  system "uglifyjs #{input} -o #{output} #{source_map_option} #{source_map_root_option} -p 2 -m -c warnings=false"
   Dir.glob("#{source_dir}/javascripts/all.*").each do |f|
     FileUtils.cp(f, "#{public_dir}/javascripts")
   end
@@ -144,6 +144,9 @@ task :gzip_js do
   scripts_dir = "#{public_dir}/javascripts"
   system "gzip -9 #{scripts_dir}/all.#{asset_version}.js"
   system "mv #{scripts_dir}/all.#{asset_version}.js{.gz,}"
+
+  system "gzip -9 #{scripts_dir}/stacktrace.min.js"
+  system "mv #{scripts_dir}/stacktrace.min.js{.gz,}"
 end
 
 desc "GZip All"
