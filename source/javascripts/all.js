@@ -31,11 +31,11 @@ Page.fn = Page.prototype = {
             // Load social buttons
             var permalink = encodeURIComponent(window.__permalink);
             var title = encodeURIComponent(window.__title);
-            Page.fn.$('reddit-container').innerHTML = '<iframe src="//reddit.com/static/button/button1.html?width=120&url=' + permalink + '&title=' + title + '" height="20" width="120" scrolling="no" frameborder="0"></iframe>';
-            Page.fn.$('hn-container').innerHTML = '<a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a>';
-            Page.fn.loadScript('//hnbutton.appspot.com/static/hn.js');
+            Page.fn.$('reddit-container').innerHTML = '<iframe src="https://reddit.com/static/button/button1.html?width=120&url=' + permalink + '&title=' + title + '" height="20" width="120" scrolling="no" frameborder="0"></iframe>';
+            Page.fn.$('hn-container').innerHTML = '<a href="https://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a>';
+            Page.fn.loadScript('https://hnbutton.appspot.com/static/hn.js');
             Page.fn.$('twitter-container').innerHTML = "<a href='https://twitter.com/share' class='twitter-share-button' data-count='horizontal' data-via='eriwen'>Tweet</a>";
-            Page.fn.loadScript('//platform.twitter.com/widgets.js', Page.fn.$('twitter-container'));
+            Page.fn.loadScript('https://platform.twitter.com/widgets.js', Page.fn.$('twitter-container'));
             Page.fn.$('gplusone-container').innerHTML = '<g:plusone size="medium"></g:plusone>';
             Page.fn.loadScript('https://apis.google.com/js/plusone.js');
         }
