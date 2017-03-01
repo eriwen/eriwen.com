@@ -141,7 +141,7 @@ body > div > div {
 
 /* line 13, ../_sass/base/_typography.scss */
 .sans, body > header h2, body > nav form .search, article header p.meta, article > footer, #content .blog-index footer, html .gist .gist-file .gist-meta, #blog-archives a.category, #blog-archives time, aside.sidebar section, body > footer {
-  font-family: "Raleway", "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open+Sans", "PT Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 /* line 14, ../_sass/base/_typography.scss */
@@ -939,7 +939,7 @@ body > nav ul {
     text-shadow: #ebebeb 0 1px;
     float: left;
     text-decoration: none;
-    font-family: "Raleway", "PT Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Open+Sans", "PT Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 1.1em;
     padding: .1em 0;
     line-height: 1.5em;
@@ -2493,7 +2493,7 @@ ul {
 /* line 94, ../_sass/custom/_styles.sass */
 .page-header {
   border-bottom: 0 none;
-  font-family: "Lobster", "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Lobster", "Open+Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
   padding: 0;
   margin: 1rem 0;
