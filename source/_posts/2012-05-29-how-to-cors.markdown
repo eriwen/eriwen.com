@@ -8,9 +8,7 @@ date: 2012-05-29 05:00
 categories: javascript
 ---
 
-One thing I ask interview candidates is how to make cross-domain requests with Javascript. All too often, interviewees only come up with JSON-P and proxying as a solution. This is insufficient for JS devs in 2012. Johnny Wey has a <a href="http://johnnywey.com/2012/05/20/jsonp-how-does-it-work/">great write up on JSON-P</a> and why you might not want to use it.
-
-Libraries like <a href="http://jquery.com">jQuery</a> will handle all of the complexities of this and gracefully degrade to other technologies as much as possible, but it is important for JSers to know what is going on under the covers. That's where this post comes in.
+One thing I've seen experienced JavaScript developers struggle with is making cross-domain requests. Libraries like <a href="http://jquery.com">jQuery</a> will handle all of the complexities of this and gracefully degrade to other technologies as much as possible, but it is important for JS devs to know what is going on under the covers. That's where this post comes in.
 
 ## Background
 HTTP requests from Javascript are traditionally bound by the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">Same Origin Policy</a>, which means that your ajax requests must have the same domain and port. The common ways to get around this are JSON-P, Proxying and message passing via <code>&lt;iframe&gt;</code>s. These all have their quirks, but the thing they generally have in common is legacy browser support.
@@ -135,7 +133,5 @@ Here is more robust Javascript code (no fallbacks, though) if you want to see it
 Since IE7 is being phased out and we're build more mobile webapps that have cross-domain capabilities, CORS is the most robust solution for making cross-domain requests with Javascript for the foreseeable future. It's the only good way to handle <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">RESTful</a> APIs with JS.
 
 If you want more detail on CORS, I recommend reading <a href="https://developer.mozilla.org/en/http_access_control">MDN Docs on CORS</a> and the <a href="http://www.w3.org/TR/cors/" title="W3C CORS spec">spec</a>.
-
-Now you have no excuses when I quiz you about it.
 
 <div class="alert alert-success">My thanks to <a href="http://johnnywey.com/">Johnny Wey</a> for reviewing the draft of this post.</div>
