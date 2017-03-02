@@ -17,3 +17,35 @@ single: true
     {% endif %}
   </footer>
 </article>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage"
+  },
+  "headline": "{% if page.title == "Home" %}{{ site.title }}{% else %}{{ page.title | truncate: 110 }}{% endif %}",
+  "description": "{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 210 }}{% else %}{{ site.title }}{% endif %}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ site.url }}{% if page.image.url %}{{ page.image.url }}{% else %}/images/knowledge-graph-photo.jpg{% endif %}"
+    width: {% if page.image.width %}{{ page.image.width }}{% else %}696{% endif %}
+    height: {% if page.image.height %}{{ page.image.height }}{% else %}696{% endif %}
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Eric Wendelin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.eriwen.com/images/knowledge-graph-photo.jpg?20170301",
+      "width": 60,
+      "height": 60
+    }
+  }
+}
+</script>

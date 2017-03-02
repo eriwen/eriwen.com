@@ -1,7 +1,6 @@
-{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
 {% include head.html %}
-<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} {% if page.sidebar == false %} class="no-sidebar" {% endif %} {% if page.sidebar == 'collapse' or site.sidebar == 'collapse' %} class="collapse-sidebar sidebar-footer" {% endif %}>
-  <nav role="navigation">{% include navigation.html %}</nav>
+<body class="no-sidebar">
+  <nav role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">{% include navigation.html %}</nav>
   <div class="container" role="main">
     <div class="row">
       {{ content | expand_urls: site.url }}
@@ -9,5 +8,13 @@
   </div>
   <footer role="contentinfo" class="page-footer">{% include post_footer.html %}</footer>
   {% include after_footer.html %}
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.eriwen.com",
+    "name": "Eric Wendelin's Blog"
+  }
+ </script>
 </body>
 </html>

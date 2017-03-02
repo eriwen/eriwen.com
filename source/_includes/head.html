@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7" itemscope itemtype="https://schema.org/WebPage"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8" itemscope itemtype="https://schema.org/WebPage"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en" itemscope itemtype="https://schema.org/WebPage"><!--<![endif]-->
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
 <head>
   <title>{% if page.title %}{{ page.title }}{% endif %}</title>
   <meta name="author" content="{{ site.author }}">
-  <meta name="verify-v1" content="P2xRqLl8A6YG9QoZdBuhksLUfzrww7khJZnI2X8TID8=" />
-  <meta name="y_key" content="62ed107e006109d4" />
   <meta property="og:site_name" content="{{ site.title }}"/>
   <meta property="og:type" content="blog"/>
 
@@ -20,11 +16,12 @@
 
   {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="{% if page.image.large %}summary_large_image{% else %}summary{% endif %}">
   <meta name="twitter:site" content="@eriwen">
   <meta name="twitter:creator" content="@eriwen">
+  <meta name="twitter:title" content="{% if page.title == "Home" %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
   <meta name="twitter:url" content="{{ canonical }}">
-  {% if page.title %}<meta name="twitter:title" content="{{ page.title }}">{% endif %}
+  {% if page.image.url %}<meta name="twitter:image" content="{{ page.image.url }}">{% endif %}
   <meta name="twitter:description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
 
   <link rel="canonical" href="{{ canonical }}">
@@ -88,10 +85,9 @@
   em { font-style: italic; }
   .hentry em { background-color: rgb(255, 255, 240); }
   </style>
-  <link href="/stylesheets/all.1702282136.css" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/all.1703012132.css" rel="stylesheet" type="text/css">
   <link href="{{ site.subscribe_rss }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml">
 
-  <!-- DNS Prefetching for A-grade browsers -->
   <link href="https://platform.twitter.com" rel="dns-prefetch" />
   <link href="https://hnbutton.appspot.com" rel="dns-prefetch" />
   <link href="https://apis.google.com" rel="dns-prefetch" />
