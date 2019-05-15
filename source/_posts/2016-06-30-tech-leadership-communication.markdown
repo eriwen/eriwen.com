@@ -4,7 +4,7 @@ comments: true
 title: "Awakening the Engineering Lead Within - Part 1: Communication"
 slug: communication
 published: true
-date: 2016-06-30 06jek:00
+date: 2016-06-30 06:00
 category: leadership
 ---
 
