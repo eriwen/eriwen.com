@@ -71,7 +71,7 @@ html .gist .gist-file .gist-meta a {
   color: #1863a1 !important;
   text-decoration: none;
 }
-/* line 4, ../../../../../../.rvm/gems/ruby-2.2.2/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+/* line 4, ../../../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
 html .gist .gist-file .gist-meta a:hover {
   text-decoration: underline;
 }
@@ -536,7 +536,7 @@ figure.highlight figcaption {
   color: #777 !important;
   text-shadow: none;
 }
-/* line 4, ../../../../../../.rvm/gems/ruby-2.2.2/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+/* line 4, ../../../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
 .download-source:hover, html .gist .gist-file .gist-meta a[href*=raw]:hover, figure.highlight figcaption a:hover {
   text-decoration: underline;
 }

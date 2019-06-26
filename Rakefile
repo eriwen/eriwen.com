@@ -42,14 +42,6 @@ end
 desc "Generate jekyll site"
 task :generate => [:sass, :update_asset_versions, :jekyll, :combine, :minify, :gzip]
 
-desc "Process CoffeeScript"
-task :coffee do
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  puts "## Generating JS with CoffeeScriptRedux"
-  system "#{ENV['COFFEESCRIPT_HOME']}/bin/coffee --js -i #{source_dir}/javascripts/custom.coffee > #{source_dir}/javascripts/custom_cstest.js"
-  system "#{ENV['COFFEESCRIPT_HOME']}/bin/coffee --source-map -i #{source_dir}/javascripts/custom.coffee > #{source_dir}/javascripts/custom.js.map"
-end
-
 desc "Process Sass"
 task :sass do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
@@ -97,9 +89,8 @@ task :minify_js do
   puts "## Minifying JS"
   input = "#{source_dir}/javascripts/all.js"
   output = "#{source_dir}/javascripts/all.#{asset_version}.js"
-  source_map_option = "--source-map #{source_dir}/javascripts/all.#{asset_version}.js.map"
-  source_map_root_option = "--source-map-root https://www.eriwen.com"
-  system "uglifyjs #{input} -o #{output} #{source_map_option} #{source_map_root_option} -p 2 -m -c warnings=false"
+  source_map_option = "--source-map \"root='https://www.eriwen.com',filename='#{source_dir}/javascripts/all.#{asset_version}.js.map'\""
+  system "uglifyjs #{input} -o #{output} -m -c #{source_map_option}"
   Dir.glob("#{source_dir}/javascripts/all.*").each do |f|
     FileUtils.cp(f, "#{public_dir}/javascripts")
   end
