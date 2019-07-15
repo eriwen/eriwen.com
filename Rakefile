@@ -39,8 +39,11 @@ end
 # Working with Jekyll #
 #######################
 
-desc "Generate jekyll site"
-task :generate => [:sass, :update_asset_versions, :jekyll, :combine, :minify, :gzip]
+desc "Generate jekyll site for development"
+task :generate => [:sass, :update_asset_versions, :jekyll, :combine, :minify]
+
+desc "Generate jekyll site for production"
+task :generate_optimized => [:sass, :update_asset_versions, :jekyll, :combine, :minify, :gzip]
 
 desc "Process Sass"
 task :sass do
